@@ -28,6 +28,7 @@ Source1:	chck-%{date}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig(wayland-server)
+BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(udev)
