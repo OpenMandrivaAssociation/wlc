@@ -195,9 +195,6 @@ pushd chck-%{date}
 %makeinstall_std -C build
 %makeinstall_std -C chck-%{date}/build
 
-%check
-%make test
-
 %files -n %{libname}
 %{_libdir}/libwlc.so.%{major}*
 
