@@ -29,6 +29,7 @@ BuildRequires:	cmake
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig(wayland-server)
 BuildRequires:	pkgconfig(xcb-util)
+BuildRequires:	pkgconfig(xcb-image)
 BuildRequires:	pkgconfig(wayland-egl)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(udev)
@@ -182,7 +183,7 @@ This package includes the development files for %{name}.
 %setup -q -a 1
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF
+%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF -DSOURCE_WLPROTO=ON
 %make
 cd ../
 pushd chck-%{date}
