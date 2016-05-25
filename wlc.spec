@@ -19,7 +19,7 @@
 
 Summary:        Wayland compositor library
 Name:           wlc
-Version:        0.0.2
+Version:        0.0.3
 Release:        1
 License:        GPLv2+
 Url:            https://github.com/Cloudef/wlc/
