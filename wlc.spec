@@ -19,11 +19,11 @@
 
 Summary:        Wayland compositor library
 Name:           wlc
-Version:        0.0.3
+Version:        0.0.5
 Release:        1
 License:        GPLv2+
 Url:            https://github.com/Cloudef/wlc/
-Source0:	https://github.com/Cloudef/wlc/releases/download/v0.0.2/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/Cloudef/wlc/releases/download/v0.0.5/%{name}-%{version}.tar.bz2
 Source1:	chck-%{date}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	pixman-devel
@@ -43,7 +43,6 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(wayland-protocols)
-BuildRequires:	pkgconfig(libsystemd-login)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(xcb-icccm)
 
