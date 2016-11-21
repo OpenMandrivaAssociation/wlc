@@ -7,11 +7,11 @@
 
 Summary:        Wayland compositor library
 Name:           wlc
-Version:        0.0.5
-Release:        3
+Version:        0.0.7
+Release:        1
 License:        GPLv2+
 Url:            https://github.com/Cloudef/wlc/
-Source0:	https://github.com/Cloudef/wlc/releases/download/v0.0.5/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/Cloudef/wlc/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig(wayland-server)
