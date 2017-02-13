@@ -9,7 +9,7 @@ Name:           wlc
 Version:        0.0.7
 %if "%{snapshot}" != ""
 %define tarname	%{name}-%{version}-%{snapshot}
-Release:        0.%{snapshot}.1
+Release:        1.%{snapshot}.1
 Source0:	%{name}-%{version}-%{snapshot}.tar.xz
 %else
 Release:	1
