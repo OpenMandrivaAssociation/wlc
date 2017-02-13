@@ -2,16 +2,24 @@
 %define libname	%mklibname wlc %{major}
 
 %define devname	%mklibname -d wlc
-
-%define date	20160427
+%define snapshot	20170213
 
 Summary:        Wayland compositor library
 Name:           wlc
 Version:        0.0.7
-Release:        1
-License:        GPLv2+
-Url:            https://github.com/Cloudef/wlc/
+%if "%{snapshot}" != ""
+%define tarname	%{name}-%{version}-%{snapshot}
+Release:        0.%{snapshot}.1
+Source0:	%{name}-%{version}-%{snapshot}.tar.xz
+%else
+Release:	1
 Source0:	https://github.com/Cloudef/wlc/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+%define	tarname	%{name}-%{version}
+%endif
+
+License:        GPLv2+
+Url:            https://github.com/Cloudef
+
 BuildRequires:	cmake
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig(wayland-server)
@@ -56,10 +64,10 @@ Provides:	%{name}-devel = %{EVRD}
 This package includes the development files for %{name}.
 
 %prep
-%setup -q
+%setup -qn %{tarname}
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF -DSOURCE_WLPROTO=ON
+%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF
 %make
 
 %install
