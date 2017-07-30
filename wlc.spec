@@ -2,11 +2,11 @@
 %define libname	%mklibname wlc %{major}
 
 %define devname	%mklibname -d wlc
-%define snapshot	20170213
+%define snapshot %nil
 
 Summary:        Wayland compositor library
 Name:           wlc
-Version:        0.0.7
+Version:        0.0.10
 %if "%{snapshot}" != ""
 %define tarname	%{name}-%{version}-%{snapshot}
 Release:        1.%{snapshot}.1
