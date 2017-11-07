@@ -6,7 +6,7 @@
 
 Summary:        Wayland compositor library
 Name:           wlc
-Version:        0.0.10
+Version:        0.0.11
 %if "%{snapshot}" != ""
 %define tarname	%{name}-%{version}-%{snapshot}
 Release:        1.%{snapshot}.1
