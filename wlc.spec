@@ -22,6 +22,7 @@ Url:            https://github.com/Cloudef
 
 BuildRequires:	cmake
 BuildRequires:	pixman-devel
+BuildRequires:	pkgconfig(osmesa)
 BuildRequires:	pkgconfig(wayland-server)
 BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	pkgconfig(xcb-image)
