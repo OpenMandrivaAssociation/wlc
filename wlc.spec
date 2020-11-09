@@ -12,15 +12,17 @@ Version:        0.0.11
 Release:        1.%{snapshot}.1
 Source0:	%{name}-%{version}-%{snapshot}.tar.xz
 %else
-Release:	1
+Release:	2
 Source0:	https://github.com/Cloudef/wlc/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 %define	tarname	%{name}-%{version}
 %endif
+Patch0:		wlc-0.0.11-compile.patch
 
 License:        GPLv2+
 Url:            https://github.com/Cloudef
 
 BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig(glesv2)
 BuildRequires:	pkgconfig(libglvnd)
@@ -66,14 +68,14 @@ Provides:	%{name}-devel = %{EVRD}
 This package includes the development files for %{name}.
 
 %prep
-%setup -qn %{tarname}
+%autosetup -p1 -n %{tarname}
+%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF -G Ninja
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF
-%make
+%ninja_build -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/libwlc.so.%{major}*

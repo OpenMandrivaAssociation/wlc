@@ -1,0 +1,14 @@
+diff -up wlc-0.0.11/src/compositor/seat/keymap.h.omv~ wlc-0.0.11/src/compositor/seat/keymap.h
+--- wlc-0.0.11/src/compositor/seat/keymap.h.omv~	2020-11-09 19:28:22.341704622 +0100
++++ wlc-0.0.11/src/compositor/seat/keymap.h	2020-11-09 19:28:30.053559179 +0100
+@@ -27,8 +27,8 @@ enum wlc_led {
+    WLC_LED_LAST
+ };
+ 
+-const char *WLC_MOD_NAMES[WLC_MOD_LAST];
+-const char *WLC_LED_NAMES[WLC_LED_LAST];
++extern const char *WLC_MOD_NAMES[WLC_MOD_LAST];
++extern const char *WLC_LED_NAMES[WLC_LED_LAST];
+ 
+ struct wlc_keymap {
+    struct xkb_keymap *keymap;
