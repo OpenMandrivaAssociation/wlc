@@ -23,7 +23,7 @@ Url:            https://github.com/Cloudef
 
 BuildRequires:	cmake
 BuildRequires:	ninja
-BuildRequires:	pixman-devel
+BuildRequires:	pkgconfig(pixman-1)
 BuildRequires:	pkgconfig(glesv2)
 BuildRequires:	pkgconfig(libglvnd)
 BuildRequires:	pkgconfig(wayland-server)
@@ -69,7 +69,9 @@ This package includes the development files for %{name}.
 
 %prep
 %autosetup -p1 -n %{tarname}
-%cmake -DCMAKE_BUILD_TYPE=Release -DWLC_BUILD_TESTS=OFF -G Ninja
+rm -r lib/chck/*
+
+%cmake -DCMAKE_BUILD_TYPE=Release -DSOURCE_CHCK=OFF -DWLC_BUILD_TESTS=OFF -G Ninja
 
 %build
 %ninja_build -C build
